@@ -1,0 +1,10 @@
+{
+  "name": "ship-proxy",
+  "version": "1.0.0",
+  "description": "Ship proxy client for shipshore project",
+  "main": "ship-proxy.js",
+  "scripts": {
+    "start": "node ship-proxy.js"
+  },
+  "dependencies": {}
+}
