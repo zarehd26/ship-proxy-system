@@ -1,0 +1,28 @@
+services:
+  offshore-proxy:
+    build:
+      context: ./server
+      dockerfile: Dockerfile   # <--- just Dockerfile
+    container_name: offshore-proxy
+    environment:
+      - PORT=9999
+      - USE_TLS=false
+      - DEBUG=true
+    ports:
+      - "9999:9999"
+
+  ship-proxy:
+    build:
+      context: ./client
+      dockerfile: Dockerfile   
+    container_name: ship-proxy
+    environment:
+      - LOCAL_PORT=8080
+      - OFFSHORE_HOST=offshore-proxy
+      - OFFSHORE_PORT=9999
+      - USE_TLS=false
+      - DEBUG=true
+    ports:
+      - "8080:8080"
+    depends_on:
+      - offshore-proxy
