@@ -1,0 +1,10 @@
+{
+  "name": "offshore-proxy",
+  "version": "1.0.0",
+  "description": "Offshore proxy server for shipshore project",
+  "main": "offshore-proxy.js",
+  "scripts": {
+    "start": "node offshore-proxy.js"
+  },
+  "dependencies": {}
+}
